@@ -1,0 +1,163 @@
+{
+  "project_name": "insig8",
+  "design_philosophy": {
+    "theme": "Dark Mode First (Linear/Raycast Style)",
+    "emotional_tone": "Calm authority, Premium intelligence, Warm & Human",
+    "core_values": [
+      "Clarity over decoration",
+      "Data as art",
+      "Human warmth in a technical world"
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Syne, sans-serif",
+      "body": "Plus Jakarta Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-7xl font-bold tracking-tight",
+      "h2": "text-4xl md:text-5xl font-bold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-semibold",
+      "body_lg": "text-lg md:text-xl leading-relaxed text-gray-400",
+      "body": "text-base leading-relaxed text-gray-400",
+      "caption": "text-sm text-gray-500 font-mono",
+      "mono_data": "font-mono text-sm tracking-wide"
+    },
+    "weights": {
+      "bold": 700,
+      "semibold": 600,
+      "regular": 400
+    }
+  },
+  "colors": {
+    "base": {
+      "background": "#0A0F1E",
+      "surface": "#111827",
+      "surface_highlight": "#1F2937"
+    },
+    "brand": {
+      "teal": "#00D4C8",
+      "amber": "#F59E0B"
+    },
+    "functional": {
+      "text_primary": "#F9FAFB",
+      "text_secondary": "#9CA3AF",
+      "text_tertiary": "#6B7280",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "border_hover": "rgba(255, 255, 255, 0.15)"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at center, rgba(0, 212, 200, 0.15) 0%, transparent 70%)",
+      "card_surface": "linear-gradient(180deg, rgba(17, 24, 39, 0.7) 0%, rgba(17, 24, 39, 1) 100%)"
+    },
+    "forbidden": [
+      "purple",
+      "violet",
+      "#7351B7"
+    ]
+  },
+  "spacing": {
+    "container_padding": "p-6 md:p-12 lg:p-24",
+    "section_gap": "gap-20 md:gap-32",
+    "element_gap": "gap-6 md:gap-8",
+    "border_radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-full"
+    }
+  },
+  "layout_strategy": {
+    "grid_system": "Bento Grid (Asymmetric)",
+    "container_width": "max-w-7xl mx-auto",
+    "alignment": "Left-aligned for text, Centered for Hero specific elements if needed for balance"
+  },
+  "components": {
+    "logo": {
+      "type": "svg",
+      "description": "Asymmetric infinity symbol. Left loop larger (portfolio view), right loop smaller (individual account). Stroke: Teal #00D4C8."
+    },
+    "navigation": {
+      "style": "Fixed, blur-on-scroll background (glassmorphism)",
+      "links": ["Product", "Pricing", "Sign in"],
+      "cta": "Start free (Teal button)"
+    },
+    "hero": {
+      "style": "Centered with massive typography. Background: Signal Node SVG (network graph style).",
+      "content": "Headline + Subheadline + CTA + Signal Card Mockup",
+      "mockup": "Stylized Account Insight Card. NOT a dashboard. Use HTML/CSS to build a card with a 'Signal' score and key metrics."
+    },
+    "social_proof": {
+      "text": "Built from 60+ real conversations",
+      "logos": "Use react-icons for Gmail (SiGmail), Calendar (SiGooglecalendar), Fathom (SiFathom? or text), Outlook (SiMicrosoftoutlook)."
+    },
+    "problem_section": {
+      "style": "3 Vignette Cards. Horizontal scroll or Grid. Scroll-driven animations.",
+      "cards": [
+        { "title": "The Black Box", "desc": "Customer health is a mystery until renewal." },
+        { "title": "The Fire Drill", "desc": "Reactive scrambling when accounts go red." },
+        { "title": "The Silo", "desc": "Data trapped in emails and calls, invisible to the team." }
+      ]
+    },
+    "reframe_section": {
+      "animation": "Word-by-word fade in on scroll. Opacity 0.2 -> 1.0.",
+      "content": "Shift from 'Managing Churn' to 'Engineering Growth'."
+    },
+    "how_it_works": {
+      "steps": 3,
+      "visual": "Animated SVG connector line linking the 3 steps."
+    },
+    "outcomes_grid": {
+      "style": "Bento Grid. 6 items.",
+      "items": ["Retention Up", "Expansion Revenue", "Team Efficiency", "Data Visibility", "Proactive Alerts", "Customer Love"]
+    },
+    "stats": {
+      "animation": "Counter up animation when in view.",
+      "metrics": ["20+ Hours Saved", "15% Churn Reduction", "3x Expansion"]
+    },
+    "founder_video": {
+      "style": "Placeholder for video. Use a nice gradient border container with a 'Play' button icon.",
+      "poster_image": "https://images.unsplash.com/photo-1763531370708-a55060ad6d1e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxtYW4lMjBpbiUyMG1vZGVybiUyMG9mZmljZSUyMGxvb2tpbmclMjBhdCUyMGNhbWVyYSUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NzMwOTI3NDZ8MA&ixlib=rb-4.1.0&q=85"
+    },
+    "cta_final": {
+      "style": "Denser signal graph background. Large 'Start Free' button."
+    },
+    "footer": {
+      "style": "Minimal. Copyright, Links."
+    }
+  },
+  "visual_enhancers": {
+    "gradients": "Use mostly solid dark colors. Use subtle radial gradients for glows behind cards or hero text.",
+    "borders": "1px solid rgba(255,255,255,0.08).",
+    "shadows": "shadow-2xl for floating elements.",
+    "glassmorphism": "backdrop-blur-xl bg-black/40 for Nav and floating cards."
+  },
+  "motion": {
+    "library": "framer-motion",
+    "types": [
+      "Fade Up (y: 20 -> 0, opacity: 0 -> 1)",
+      "Stagger Children (for grids)",
+      "Scroll Progress (for Reframe text)",
+      "Path Drawing (for How it Works connector)"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install dependencies: `yarn add framer-motion lucide-react react-icons clsx tailwind-merge`",
+    "Configure Tailwind with the specific colors (#0A0F1E, #00D4C8, #F59E0B) and fonts.",
+    "Import fonts in `index.css` via Google Fonts URL.",
+    "Create the 'Signal Card' using pure CSS/Tailwind. It should look like a high-tech trading card or notification.",
+    "Use `framer-motion` for all scroll animations.",
+    "Ensure 'Data Test IDs' are added to all interactive elements.",
+    "Do NOT use stock photos for people (except the founder placeholder). Use abstract data visualizations or UI mockups.",
+    "Ensure the 'Signal Node' background is an SVG pattern that is subtle and dark.",
+    "For the 'Reframe' section, use `useScroll` and `useTransform` from framer-motion to create the text reveal effect."
+  ],
+  "universal_guidelines": {
+    "do_not_center_everything": "Use left alignment for body text. Center only big headlines.",
+    "spacing": "Use `gap-8` or `gap-12` minimum between grid items.",
+    "typography_hierarchy": "Contrast is key. Headings = Syne (Bold). Body = Jakarta (Regular). Data = Mono (JetBrains).",
+    "mobile_responsiveness": "Stack everything on mobile. Reduce padding to `p-6`."
+  },
+  "image_urls": {
+    "founder_placeholder": "https://images.unsplash.com/photo-1763531370708-a55060ad6d1e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxtYW4lMjBpbiUyMG1vZGVybiUyMG9mZmljZSUyMGxvb2tpbmclMjBhdCUyMGNhbWVyYSUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NzMwOTI3NDZ8MA&ixlib=rb-4.1.0&q=85"
+  }
+}
