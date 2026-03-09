@@ -1,0 +1,69 @@
+{
+  "summary": "Comprehensive frontend testing of insig8 landing page. All major sections render correctly. Navigation, hero, signal card, built-from-research, problem vignettes, reframe, how it works, outcomes, stats, who-not-for, founder note, final CTA, and footer all present and functional.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Hero CTA",
+        "issue": "data-testid is 'hero-cta-btn' not 'hero-cta' — minor naming inconsistency but element exists",
+        "selector": "[data-testid='hero-cta-btn']",
+        "priority": "LOW"
+      },
+      {
+        "component": "Mobile Hamburger",
+        "issue": "data-testid is 'nav-hamburger' (confirmed in testids list) but query_selector('[data-testid=\"mobile-menu-btn\"]') failed — minor naming issue. Hamburger IS visible on mobile.",
+        "selector": "[data-testid='nav-hamburger']",
+        "priority": "LOW"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "How It Works Steps",
+        "issues": ["Step 2 text is 'insig8 reads the patterns you can't' and Step 3 is 'You see what matters, when it matters' — spec said 'reads patterns' and 'see what matters' — content matches spec intent, just more verbose"]
+      }
+    ]
+  },
+  "test_report_links": ["/app/test_reports/iteration_1.json"],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "All sections have comprehensive data-testid attributes — excellent testability coverage",
+    "Nav scroll blur working correctly (backdrop-filter: blur(12px) applied on scroll past 80px)",
+    "Stats count-up animation working (values 3-6, 18, 40+, 0 confirmed)",
+    "Signal card has all required data: Meridian Technologies Ltd, health score 47↓, 3 signals detected, Renewal in 47 days, View account, Draft outreach buttons",
+    "Hero two-weight headline working: light text for 'You Read Every Email. But Can You See' and bold teal for 'Every Pattern?'"
+  ],
+  "updated_files": [],
+  "success_rate": {
+    "backend": "N/A - frontend only",
+    "frontend": "97%"
+  },
+  "seed_data_creation": "",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "This is a pure frontend landing page at https://lucid-borg-5.preview.emergentagent.com. All sections render correctly. All data-testids are present and comprehensive. Nav blur on scroll works. Mobile hamburger is visible. Stats count-up animation works. Signal card data all present. All 6 outcome cards present. Founder note has video placeholder with play button visible. Footer has Product/Company/Legal columns and LinkedIn/Twitter icons. Copyright shows 2026.",
+  "passed_tests": [
+    "Navigation logo (infinity mark + insig8 text) in teal",
+    "Nav links: Product, Pricing, Sign in, Start free",
+    "Hero dark background with signal node graph SVG",
+    "Hero two-weight headline treatment",
+    "Signal card: Meridian Technologies Ltd, health score 47, 3 signals detected, Renewal in 47 days, View account, Draft outreach",
+    "Built-from-research: 60+ conversations text",
+    "Tool logos: Gmail, Google Calendar, Fathom, Fireflies, Outlook",
+    "Problem section: 'You've been here before' + all 3 vignette cards",
+    "Reframe section with pull quote and teal border-left",
+    "How It Works: light background, 3 steps with Connect/reads patterns/see what matters content",
+    "Outcomes: 6 outcome cards in grid",
+    "Stats: 3-6 weeks, 18 min, 40+ signals, 0 manual entry",
+    "Who It's Not For: 'An Honest Note' + 'insig8 is not for everyone'",
+    "Founder Note: video placeholder with play button visible",
+    "Final CTA: 'Your portfolio is already telling a story. Start reading it.'",
+    "Footer: logo, description, social icons, Product/Company/Legal columns, copyright 2026",
+    "Nav scroll blur: backdrop-filter blur(12px) applied after 80px scroll",
+    "Mobile hamburger menu visible on 390px viewport",
+    "All interactive elements have data-testid attributes"
+  ]
+}

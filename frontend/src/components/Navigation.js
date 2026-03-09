@@ -1,0 +1,94 @@
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const InfinityMark = () => (
+  <svg width="44" height="26" viewBox="0 0 64 36" fill="none" aria-hidden="true">
+    <path
+      d="M32 18C28 10 24 3 16 3C8 3 1 9 1 18C1 27 8 33 16 33C24 33 28 26 32 18Z"
+      stroke="#00D4C8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+    />
+    <path
+      d="M32 18C36 11 39 6 46 6C53 6 63 10 63 18C63 26 53 30 46 30C39 30 36 25 32 18Z"
+      stroke="#00D4C8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const Navigation = () => {
+  const [scrolled, setScrolled]     = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  return (
+    <>
+      <nav
+        className={`nav hero-load-logo${scrolled ? ' nav--scrolled' : ''}`}
+        data-testid="navigation"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <a href="#" className="nav__logo" data-testid="nav-logo" aria-label="insig8 home">
+          <InfinityMark />
+          <span className="nav__logo-text">insig8</span>
+        </a>
+
+        <ul className="nav__links hero-load-navitems" role="list">
+          <li><a href="#" className="nav__link" data-testid="nav-product">Product</a></li>
+          <li><a href="#" className="nav__link" data-testid="nav-pricing">Pricing</a></li>
+        </ul>
+
+        <div className="nav__actions hero-load-navitems">
+          <button className="btn-ghost" data-testid="nav-signin">Sign in</button>
+          <button className="btn-primary" data-testid="nav-start-free">
+            Start free <span className="btn-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <button
+          className="nav__hamburger"
+          onClick={() => setMobileOpen(true)}
+          data-testid="nav-hamburger"
+          aria-label="Open menu"
+          aria-expanded={mobileOpen}
+        >
+          <Menu size={22} color="var(--text-primary)" />
+        </button>
+      </nav>
+
+      {mobileOpen && (
+        <div className="nav__mobile-overlay" data-testid="nav-mobile-overlay" role="dialog" aria-modal="true">
+          <button
+            className="nav__mobile-close"
+            onClick={() => setMobileOpen(false)}
+            data-testid="nav-mobile-close"
+            aria-label="Close menu"
+          >
+            <X size={22} color="var(--text-muted)" />
+          </button>
+          <a href="#" className="nav__mobile-link" onClick={() => setMobileOpen(false)} data-testid="nav-mobile-product">Product</a>
+          <a href="#" className="nav__mobile-link" onClick={() => setMobileOpen(false)} data-testid="nav-mobile-pricing" style={{ animationDelay: '0.05s' }}>Pricing</a>
+          <a href="#" className="nav__mobile-link" onClick={() => setMobileOpen(false)} data-testid="nav-mobile-signin" style={{ animationDelay: '0.10s' }}>Sign in</a>
+          <button
+            className="btn-primary"
+            style={{ fontSize: '1.125rem', padding: '14px 32px', marginTop: '1rem', height: 'auto' }}
+            data-testid="nav-mobile-cta"
+          >
+            Start free →
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Navigation;
