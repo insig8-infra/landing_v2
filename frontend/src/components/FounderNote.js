@@ -7,20 +7,20 @@ const FounderNote = () => (
   <section className="founder-note" data-testid="founder-note-section">
     <div className="founder-note__inner">
       <span className="section-eyebrow section-eyebrow--muted" style={{ display: 'block', marginBottom: '1.25rem' }} data-testid="founder-eyebrow">
-        From the Founder
+        From the Founders
       </span>
       <h2
         className="section-headline"
         style={{ textAlign: 'center' }}
         data-testid="founder-headline"
       >
-        The problem I kept seeing.
+        The problem we kept seeing.
       </h2>
       <p
         style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: 0, lineHeight: 1.7 }}
         data-testid="founder-subhead"
       >
-        60 seconds. No slides. Here's why I built insig8.
+        60 seconds. No slides. Here's why we're building insig8.
       </p>
 
       <div className="founder-note__video-wrap" data-testid="founder-video-placeholder">

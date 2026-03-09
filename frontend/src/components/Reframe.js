@@ -42,17 +42,15 @@ const Reframe = () => {
 
         <div className="reframe__body" data-testid="reframe-body">
           <p>
-            You read every email. You know your accounts. The problem is that you're managing
-            40 relationships simultaneously — and client relationships don't degrade in a single moment.
-            They shift across dozens of interactions over months. A tone here. A response time there.
-            An executive who quietly stopped showing up.
+            You read every email. You know your accounts. The problem is that client relationships
+            don't degrade in a single moment — they shift across dozens of interactions over months.
+            A tone here. A response time there. An executive who quietly stopped showing up.
           </p>
           <br />
           <p>
-            No individual signal is alarming. Together, they tell the whole story. But tracking
-            40 of those stories simultaneously — noticing which one has been quietly cooling for
-            six weeks, correlating a tone shift with an absent stakeholder with a slower meeting cadence
-            — that is not a human-scale problem. That is a pattern recognition at scale problem.
+            No individual signal is alarming. Together, they tell a story. But tracking all of those
+            stories simultaneously — noticing which one has been quietly cooling, correlating a tone
+            shift with a missing stakeholder — that is a pattern recognition problem. Not a people problem.
           </p>
         </div>
 
@@ -61,8 +59,8 @@ const Reframe = () => {
         </div>
 
         <p className="reframe__p3" data-testid="reframe-p3">
-          insig8 is the pattern recognition layer. The part of your CS operation that holds all
-          40 relationships in view simultaneously — and tells you which one needs your attention
+          insig8 is the pattern recognition layer. The part of your CS operation that holds your
+          entire portfolio in view simultaneously — and tells you which account needs your attention
           today, and why, and when.
         </p>
       </div>

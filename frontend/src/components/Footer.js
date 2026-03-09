@@ -1,10 +1,16 @@
 import React from 'react';
 import { Linkedin, Twitter } from 'lucide-react';
 
-const InfinityMark = () => (
-  <svg width="36" height="22" viewBox="0 0 64 36" fill="none" aria-hidden="true">
-    <path d="M32 18C28 10 24 3 16 3C8 3 1 9 1 18C1 27 8 33 16 33C24 33 28 26 32 18Z" stroke="#00D4C8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M32 18C36 11 39 6 46 6C53 6 63 10 63 18C63 26 53 30 46 30C39 30 36 25 32 18Z" stroke="#00D4C8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+const LogoMark = () => (
+  <svg width="16" height="26" viewBox="0 0 26 40" fill="none" aria-hidden="true">
+    <ellipse cx="13" cy="11" rx="10" ry="9"
+      stroke="#00D4C8" strokeWidth="2" fill="rgba(0,212,200,0.05)"
+    />
+    <ellipse cx="13" cy="29" rx="12" ry="9"
+      stroke="#00D4C8" strokeWidth="2" fill="rgba(0,212,200,0.03)"
+    />
+    <circle cx="13" cy="20" r="4" fill="#00D4C8" opacity="0.18"/>
+    <circle cx="13" cy="20" r="2.5" fill="#00D4C8"/>
   </svg>
 );
 
@@ -14,7 +20,7 @@ const Footer = () => (
       <div className="footer__grid">
         <div className="footer__brand">
           <div className="footer__logo">
-            <InfinityMark />
+            <LogoMark />
             <span className="footer__logo-text">insig8</span>
           </div>
           <p className="footer__tagline">The post-sales intelligence layer.</p>

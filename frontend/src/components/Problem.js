@@ -5,7 +5,7 @@ const cards = [
     icon: '⚠',
     iconStyle: { color: 'var(--accent-amber)' },
     title: 'The account that seemed fine.',
-    body: 'Engaged in meetings. Responsive on email. A good relationship by every signal you could see. Then on a Tuesday afternoon, the cancellation email arrived. Looking back — the tone had been shifting for months. The executive had quietly stopped joining calls six weeks ago. The meeting cadence had slipped. The signals were there. They just needed to be seen together, across time.',
+    body: 'The replies were arriving. Box ticked. But something subtle had shifted — emails getting slightly shorter, slightly more formal. A meeting rescheduled and not rescheduled back. The executive who used to join calls had quietly stopped. Each signal, in isolation, was easy to explain. Together, over two months, they formed a clear picture. The cancellation came on a Tuesday. Looking back, the pattern had been visible for weeks.',
     tags: ['tone_shift_detected', 'executive_disengaged', 'meeting_cadence_drop'],
     tagStyle: '',
     animClass: 'anim-in-left',

@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const InfinityMark = () => (
-  <svg width="44" height="26" viewBox="0 0 64 36" fill="none" aria-hidden="true">
-    <path
-      d="M32 18C28 10 24 3 16 3C8 3 1 9 1 18C1 27 8 33 16 33C24 33 28 26 32 18Z"
-      stroke="#00D4C8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+/*
+  LogoMark: Two vertically-stacked ellipses.
+  Upper (narrow) = individual account view.
+  Lower (wider)  = portfolio view.
+  Nexus dot      = the moment of insight where the two levels intersect.
+*/
+const LogoMark = () => (
+  <svg width="20" height="32" viewBox="0 0 26 40" fill="none" aria-hidden="true">
+    <ellipse cx="13" cy="11" rx="10" ry="9"
+      stroke="#00D4C8" strokeWidth="2" fill="rgba(0,212,200,0.05)"
     />
-    <path
-      d="M32 18C36 11 39 6 46 6C53 6 63 10 63 18C63 26 53 30 46 30C39 30 36 25 32 18Z"
-      stroke="#00D4C8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+    <ellipse cx="13" cy="29" rx="12" ry="9"
+      stroke="#00D4C8" strokeWidth="2" fill="rgba(0,212,200,0.03)"
     />
+    <circle cx="13" cy="20" r="5" fill="#00D4C8" className="logo-nexus-glow"/>
+    <circle cx="13" cy="20" r="2.5" fill="#00D4C8"/>
   </svg>
 );
 
@@ -38,7 +44,7 @@ const Navigation = () => {
         aria-label="Main navigation"
       >
         <a href="#" className="nav__logo" data-testid="nav-logo" aria-label="insig8 home">
-          <InfinityMark />
+          <LogoMark />
           <span className="nav__logo-text">insig8</span>
         </a>
 
@@ -49,8 +55,8 @@ const Navigation = () => {
 
         <div className="nav__actions hero-load-navitems">
           <button className="btn-ghost" data-testid="nav-signin">Sign in</button>
-          <button className="btn-primary" data-testid="nav-start-free">
-            Start free <span className="btn-arrow" aria-hidden="true">→</span>
+          <button className="btn-primary" data-testid="nav-early-access">
+            Get early access <span className="btn-arrow" aria-hidden="true">→</span>
           </button>
         </div>
 
@@ -83,7 +89,7 @@ const Navigation = () => {
             style={{ fontSize: '1.125rem', padding: '14px 32px', marginTop: '1rem', height: 'auto' }}
             data-testid="nav-mobile-cta"
           >
-            Start free →
+            Get early access →
           </button>
         </div>
       )}

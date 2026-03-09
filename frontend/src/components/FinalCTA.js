@@ -22,7 +22,7 @@ const FinalCTA = () => (
       </p>
 
       <button className="btn-cta-large" data-testid="final-cta-btn">
-        Start free — 14 days, no card required
+        Get early access — it's free
         <span className="btn-arrow" aria-hidden="true">→</span>
       </button>
 

@@ -4,37 +4,37 @@ const outcomeCards = [
   {
     icon: <span style={{ color: 'var(--accent-amber)', fontSize: '1.1rem' }}>↘</span>,
     title: 'Know when a relationship is cooling',
-    body: 'Before the client has made a decision, you\'ll see the pattern building: slower replies, shorter emails, a meeting that got rescheduled once too often. insig8 surfaces the trajectory, not just the current state.',
+    body: 'Slower replies, shorter emails, a rescheduled meeting. insig8 shows you the trajectory — not just the current health score.',
     tags: ['sentiment_trajectory', 'response_decay'],
   },
   {
     icon: <span style={{ color: 'var(--accent-green)', fontSize: '1.1rem' }}>↗</span>,
     title: 'Catch the right moment to expand',
-    body: 'Real engagement signals — not NPS surveys — show you which accounts are growing in energy and ready for the next conversation. The accounts that are asking more questions, responding faster, re-engaging at senior level.',
+    body: 'Faster replies, more questions, senior stakeholders rejoining calls. insig8 shows you which accounts are primed for the next conversation — before you need to ask.',
     tags: ['expansion_signal', 'exec_re-engagement'],
   },
   {
     icon: <span style={{ color: 'var(--accent-teal)', fontSize: '1.1rem' }}>◎</span>,
     title: 'Never lose context when someone leaves',
-    body: 'Every account\'s full relationship history, signals, and qualitative context is preserved in insig8. When a CSM leaves or a new hire joins, onboarding takes hours — not months. Nothing walks out the door.',
+    body: 'Full relationship history preserved in insig8. When a CSM leaves or a new hire joins, onboarding takes hours — not months. Nothing walks out the door.',
     tags: ['context_preserved', 'handoff_ready'],
   },
   {
     icon: <span style={{ color: 'var(--accent-amber)', fontSize: '1.1rem' }}>◷</span>,
     title: 'Track every commitment you\'ve made',
-    body: 'insig8 extracts commitments from your meeting notes automatically — and flags the ones that haven\'t been followed up. The things you promised in the last QBR that quietly slipped. Closed-loop, without a task manager.',
+    body: 'insig8 pulls commitments from your meeting notes and flags what hasn\'t been followed up. The things you promised that quietly slipped.',
     tags: ['commitment_extracted', 'fulfillment_tracked'],
   },
   {
     icon: <span style={{ color: 'var(--accent-teal)', fontSize: '1.1rem' }}>◈</span>,
     title: 'Health scores built from real signals',
-    body: 'Not a manual RAG status someone updates monthly. A live score built from communication frequency, sentiment trajectory, engagement depth, stakeholder map, and renewal proximity. Ground-up, honest, automatic.',
+    body: 'Not a manual RAG status. A live score built from communication frequency, sentiment, engagement depth, and renewal proximity. Ground-up, honest, automatic.',
     tags: ['health_score', 'signal_based'],
   },
   {
     icon: <span style={{ color: 'var(--accent-green)', fontSize: '1.1rem' }}>★</span>,
     title: 'Capture success stories before they disappear',
-    body: 'When a client says something genuinely positive — a win, a milestone, a moment of delight — insig8 captures it before it disappears into a sent folder. QBR material. Case study material. The proof of value you\'re creating, automatically collected.',
+    body: 'A client says something genuinely great — insig8 captures it before it disappears into a sent folder. QBR material. Case study material. Collected automatically.',
     tags: ['success_captured', 'value_documented'],
   },
 ];

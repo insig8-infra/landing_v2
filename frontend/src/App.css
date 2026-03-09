@@ -278,7 +278,14 @@
   font-size: 0.8125rem; color: var(--text-secondary); font-family: 'Plus Jakarta Sans', sans-serif;
   transition: border-color 0.2s ease, color 0.2s ease; cursor: default;
 }
-.tool-chip:hover { border-color: rgba(0,212,200,0.4); color: var(--text-primary); }
+.tool-chip:not(.tool-chip--soon):hover { border-color: rgba(0,212,200,0.4); color: var(--text-primary); }
+.tool-chip--soon { opacity: 0.65; cursor: default; }
+.tool-chip__badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.5625rem;
+  color: var(--accent-amber); background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.25); border-radius: 2px; padding: 1px 5px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
 
 /* ============================================================
    PROBLEM
@@ -590,6 +597,17 @@
   .footer__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
   .footer { padding: 40px 1.25rem 32px; }
+}
+
+/* Logo nexus pulse */
+@keyframes nexusPulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.32; transform: scale(1.45); }
+}
+.logo-nexus-glow {
+  animation: nexusPulse 3s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
 }
 
 /* ============================================================

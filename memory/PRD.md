@@ -40,6 +40,17 @@ Build a dark-mode-first, scroll-driven, conversion-focused landing page for insi
 
 ## Implemented Features (Feb 2026)
 
+### Changes in Iteration 2 (Feb 2026)
+1. Real brand logos for tool chips: Gmail (SiGmail), MS Outlook (custom SVG), Google Calendar (custom SVG), Outlook Calendar (custom SVG), Fathom AI (custom SVG), Fireflies (custom SVG), Teams + Slack as "coming soon" with amber badges
+2. Problem card 1 — fixed contradiction: removed "engaged in meetings" opening, rewrote to show subtle degradation signals only
+3. Reframe section — removed all "40" references, shortened paragraphs
+4. How It Works — drastically shortened step text (1-2 sentences each), more visual
+5. Outcomes (What You'll Know) — all 6 card bodies shortened by ~50%
+6. Removed "Who It's Not For" section entirely
+7. Founder Note — changed to "we" language throughout, "From the Founders"
+8. All CTAs: "Start free" → "Get early access"
+9. Logo redesign: horizontal infinity replaced with vertical dual-ellipse nexus mark — upper (narrow) = individual account, lower (wider) = portfolio view, nexus glowing dot = the moment of insight
+
 ### Page Sections (in order)
 1. **Navigation** — Fixed, transparent → blur-on-scroll (backdrop-filter: blur(12px)), infinity mark + "insig8" in teal, Product/Pricing links, Sign in / Start free buttons, mobile hamburger with full-screen overlay
 2. **Hero** — Signal node SVG background (atmospheric, opacity 0.18), two-weight headline (light + bold teal), signal card mockup (Meridian Technologies Ltd, health score 47↓, 3 signals, renewal bar, action buttons), ghost cards for portfolio depth effect, page-load animation sequence

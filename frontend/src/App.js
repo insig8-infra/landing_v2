@@ -10,7 +10,6 @@ import Reframe from './components/Reframe';
 import HowItWorks from './components/HowItWorks';
 import Outcomes from './components/Outcomes';
 import Stats from './components/Stats';
-import WhoItNotFor from './components/WhoItNotFor';
 import FounderNote from './components/FounderNote';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
@@ -26,7 +25,6 @@ const LandingPage = () => (
       <HowItWorks />
       <Outcomes />
       <Stats />
-      <WhoItNotFor />
       <FounderNote />
       <FinalCTA />
     </main>

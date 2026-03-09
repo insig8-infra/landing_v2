@@ -66,9 +66,8 @@ export const SignalGraph = ({ dense = false }) => {
           <g key={node.id}>
             {node.t !== 'grey' && (
               <circle
-                cx={`${node.x}%`} cy={`${node.y}%`} r={node.r * 2.5}
-                fill={c} opacity="0.12"
-                className={cls} style={{ '--d': node.d }}
+                cx={`${node.x}%`} cy={`${node.y}%`} r={node.r * 2.2}
+                fill={c} opacity="0.10"
               />
             )}
             <circle
@@ -176,7 +175,7 @@ const Hero = () => (
 
         <div className="hero__cta">
           <button className="btn-hero hero-load-cta" data-testid="hero-cta-btn">
-            Connect your inbox — free for 14 days
+            Get early access — free for 14 days
             <span className="btn-arrow" aria-hidden="true">→</span>
           </button>
           <p className="hero__trust hero-load-trust" data-testid="hero-trust-line">
