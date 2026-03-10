@@ -13,6 +13,7 @@ import Stats from './components/Stats';
 import FounderNote from './components/FounderNote';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import LogoConcepts from './LogoConcepts';
 
 const LandingPage = () => (
   <>
@@ -38,6 +39,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/logo-concepts" element={<LogoConcepts />} />
         </Routes>
       </BrowserRouter>
     </div>

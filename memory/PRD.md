@@ -100,6 +100,15 @@ Build a dark-mode-first, scroll-driven, conversion-focused landing page for insi
 
 ---
 
+## Logo Concepts In Progress (Feb 2026)
+4 "i as Lighthouse" concepts built at `/logo-concepts` route for client review:
+- **A**: Signal Fan — i-dot + multiple thin fan rays rightward
+- **B**: Scan Line — single bold beam from i-dot → terminal dot at "8"
+- **C**: The Lantern — custom lighthouse tower I + teal diamond cap + cone
+- **D**: Pulse Arcs — concentric radar/sonar arcs from i-dot
+
+Pending: client picks a concept → apply to Navigation.js + Footer.js, remove /logo-concepts route.
+
 ## Prioritized Backlog
 
 ### P0 — Ready to activate when content is available
