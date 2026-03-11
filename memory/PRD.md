@@ -1,138 +1,80 @@
-# insig8 Landing Page — PRD
+# insig8 Landing Page - Product Requirements
 
-## Project Overview
-**Product**: insig8 — a post-sales relationship intelligence platform for B2B companies  
-**Date Created**: February 2026  
-**Type**: Marketing landing page (pure frontend, no backend required)
+## Original Problem Statement
+Build a landing page for "insig8" - a Post-Sales Relationship Intelligence product. The user provided initial requirements via a text document, then refined through multiple rounds of feedback. The latest direction was to merge the design system (colors, theme, fonts, scroll flow) from a separate GitHub reference repo (`insig8-infra/insig8-landing`) with the text/wording from the existing project, and enhance with animations.
 
----
+## User Personas
+- **CS Leads / Customer Success Managers**: Primary audience. Need tools to track relationship health across portfolios.
+- **Founders doing their own CS**: Secondary audience. Want automated signal detection.
+- **Delivery Managers**: B2B SaaS and professional services.
 
-## Problem Statement
-Build a dark-mode-first, scroll-driven, conversion-focused landing page for insig8. The page has one job: make the right person feel so precisely understood in the first 8 seconds that they scroll. Spec provided in `insig8_landing_page_prompt_v2.txt`.
-
----
-
-## Target Audience
-- Founders doing their own CS at B2B companies (10–100 employees)
-- First CS hire managing 20–200 accounts
-- Delivery managers at B2B SaaS and professional services companies
-- Anyone doing serious customer success without enterprise CS infrastructure
-
----
+## Core Requirements
+1. **Design System**: Deep dark blue theme (HSL CSS variables), Outfit headings + Plus Jakarta Sans body fonts, glass-morphism cards, gradient accents
+2. **Scroll Flow**: Lenis smooth scroll, framer-motion scroll-driven animations, floating sphere badges that orbit/converge
+3. **Hero Section**: Word-swap animation (Pattern → Signal on scroll), badge pill, CTA button, floating badges
+4. **Integrations Marquee**: Tool logos (Gmail, Outlook, Calendar, Fathom, Fireflies) in moving marquee
+5. **Problem Section**: 3 bento cards with signal tags
+6. **Reframe Section**: Word-by-word pull-quote animation
+7. **How It Works**: 3 numbered step cards
+8. **Outcomes**: 6 bento cards in responsive grid
+9. **Stats**: Animated counters (3-6 weeks, 18 min, 40+, 0)
+10. **Founder Note**: Video placeholder
+11. **CTA Section**: Full-width with gradient glow
+12. **Pricing**: 3-tier cards (Starter/Growth/Enterprise)
+13. **FAQ**: Accordion with 5 items
+14. **Footer**: 4-column layout with brand, links, social
+15. **Early Access Modal**: Form submission to backend API, duplicate detection
+16. **Backend API**: POST /api/early-access (signup), GET /api/early-access/count
+17. **Logo**: Current placeholder logo kept; lighthouse concept paused
 
 ## Architecture
-- **Stack**: React (CRA + CRACO), TailwindCSS, CSS Custom Properties
-- **Fonts**: Syne Bold (headlines), Plus Jakarta Sans (body), JetBrains Mono (data values) — loaded from Google Fonts
-- **Animations**: CSS @keyframes + IntersectionObserver (no heavy animation library)
-- **Icons**: Lucide React
-- **No backend** required — pure static landing page
-
----
-
-## User Preferences Applied
-- Social proof bar replaced with "Built from 60+ real conversations" + tool logos (Gmail, Calendar, Fathom, Fireflies, Outlook)
-- Testimonial section replaced with founder video/Loom embed placeholder
-- CTAs non-clickable (href="#") — ready for real URL wiring
-- Navigation: Product | Pricing | Sign in | Start free only
-- Logo: asymmetric infinity SVG — left loop larger (portfolio view), right loop smaller (individual account)
-
----
-
-## Implemented Features (Feb 2026)
-
-### Changes in Iteration 2 (Feb 2026)
-1. Real brand logos for tool chips: Gmail (SiGmail), MS Outlook (custom SVG), Google Calendar (custom SVG), Outlook Calendar (custom SVG), Fathom AI (custom SVG), Fireflies (custom SVG), Teams + Slack as "coming soon" with amber badges
-2. Problem card 1 — fixed contradiction: removed "engaged in meetings" opening, rewrote to show subtle degradation signals only
-3. Reframe section — removed all "40" references, shortened paragraphs
-4. How It Works — drastically shortened step text (1-2 sentences each), more visual
-5. Outcomes (What You'll Know) — all 6 card bodies shortened by ~50%
-6. Removed "Who It's Not For" section entirely
-7. Founder Note — changed to "we" language throughout, "From the Founders"
-8. All CTAs: "Start free" → "Get early access"
-9. Logo redesign: horizontal infinity replaced with vertical dual-ellipse nexus mark — upper (narrow) = individual account, lower (wider) = portfolio view, nexus glowing dot = the moment of insight
-
-### Page Sections (in order)
-1. **Navigation** — Fixed, transparent → blur-on-scroll (backdrop-filter: blur(12px)), infinity mark + "insig8" in teal, Product/Pricing links, Sign in / Start free buttons, mobile hamburger with full-screen overlay
-2. **Hero** — Signal node SVG background (atmospheric, opacity 0.18), two-weight headline (light + bold teal), signal card mockup (Meridian Technologies Ltd, health score 47↓, 3 signals, renewal bar, action buttons), ghost cards for portfolio depth effect, page-load animation sequence
-3. **Built From Research** — "60+ conversations" statement, tool integration logos
-4. **Problem** — "You've been here before" + 3 vignette cards with scroll-triggered slide-in animations and amber hover glow
-5. **Reframe** — "Why it's hard" section with pull quote word-by-word fade (50ms stagger)
-6. **How It Works** — Light (#F8FAFC) background with dark text, 3 steps, animated connector with traveling dot
-7. **Outcomes** — 2×3 grid with scroll-triggered fade-up and hover teal left border
-8. **Stats** — 4 stats with count-up animation on scroll: 3–6 weeks, 18 min, 40+, 0
-9. **Who It's Not For** — "An Honest Note" trust-builder section
-10. **Founder Note** — Video/Loom embed placeholder with poster image and play button
-11. **Final CTA** — "Your portfolio is already telling a story. Start reading it." + dense teal signal graph
-12. **Footer** — 4-column (brand + Product + Company + Legal), LinkedIn/Twitter icons, copyright 2026
-
-### Design System
-- Color palette: bg-base #0A0F1E, bg-surface #111827, accent-teal #00D4C8, accent-amber #F59E0B, accent-green #10B981, accent-coral #F87171
-- Amber used exclusively for risk/alerts and CTA hover (intentional subconscious signal)
-- JetBrains Mono for all data values (health scores, signal values, tags)
-- Generous whitespace throughout
-- Fully responsive: mobile (<640px), tablet (640–1024px), desktop (>1024px)
-- prefers-reduced-motion respected
-
----
-
-## File Structure
 ```
-/app/frontend/src/
-├── App.js                          # Main app, routes to LandingPage
-├── App.css                         # All component styles + keyframes
-├── index.css                       # Google Fonts + CSS custom properties
-├── hooks/
-│   └── useIntersection.js          # IntersectionObserver hook
-└── components/
-    ├── Navigation.js               # Fixed nav + mobile menu
-    ├── Hero.js                     # Hero + SignalGraph + SignalCard (exported)
-    ├── BuiltFromResearch.js        # 60+ conversations + tool logos
-    ├── Problem.js                  # 3 vignette cards
-    ├── Reframe.js                  # Pull quote with word-by-word fade
-    ├── HowItWorks.js               # 3 steps + animated connector
-    ├── Outcomes.js                 # 6 outcome cards grid
-    ├── Stats.js                    # Stats with count-up animation
-    ├── WhoItNotFor.js              # Trust builder
-    ├── FounderNote.js              # Video placeholder
-    ├── FinalCTA.js                 # Final conversion section
-    └── Footer.js                  # Site footer
+/app/
+├── backend/
+│   ├── .env (MONGO_URL, DB_NAME)
+│   ├── requirements.txt
+│   ├── server.py (FastAPI + early-access API)
+│   └── tests/
+│       └── test_early_access_api.py
+└── frontend/
+    ├── .env (REACT_APP_BACKEND_URL)
+    ├── package.json
+    ├── tailwind.config.js (full design token system)
+    ├── src/
+    │   ├── App.js, App.css, index.css (design system CSS)
+    │   ├── content/
+    │   │   └── landingCopy.js (all page text/content centralized)
+    │   ├── components/
+    │   │   ├── landing/ (all section components + animation utilities)
+    │   │   └── ui/ (shadcn components)
+    │   └── pages/
+    │       └── LandingPage.jsx (page assembly + Lenis init)
 ```
 
----
+## Tech Stack
+- **Frontend**: React, Tailwind CSS, framer-motion, Lenis, react-fast-marquee, lucide-react
+- **Backend**: FastAPI, MongoDB (via Motor), Pydantic
+- **Fonts**: Outfit (headings), Plus Jakarta Sans (body)
 
-## Logo Concepts In Progress (Feb 2026)
-4 "i as Lighthouse" concepts built at `/logo-concepts` route for client review:
-- **A**: Signal Fan — i-dot + multiple thin fan rays rightward
-- **B**: Scan Line — single bold beam from i-dot → terminal dot at "8"
-- **C**: The Lantern — custom lighthouse tower I + teal diamond cap + cone
-- **D**: Pulse Arcs — concentric radar/sonar arcs from i-dot
+## What's Been Implemented (as of 2026-03-11)
+- [x] Full redesigned landing page with reference repo's design system
+- [x] All text/wording carried over from original project
+- [x] 14 page sections with framer-motion animations
+- [x] Hero word-swap animation (Pattern → Signal)
+- [x] Floating sphere badges with scroll convergence
+- [x] Lenis smooth scroll
+- [x] Integrations marquee with tool chips
+- [x] Problem, Reframe, HowItWorks, Outcomes, Stats sections
+- [x] Pricing (3 tiers), FAQ (accordion), Footer
+- [x] Early Access Modal with form → backend API
+- [x] Backend API: signup + duplicate detection + count
+- [x] Mobile responsive (hamburger menu, stacked layout)
+- [x] Full e2e testing passed (100% backend, 100% frontend)
 
-Pending: client picks a concept → apply to Navigation.js + Footer.js, remove /logo-concepts route.
-
-## Prioritized Backlog
-
-### P0 — Ready to activate when content is available
-- Wire CTA buttons to real signup/waitlist URL
-- Replace Loom placeholder with actual founder recording
-- Replace [Name] placeholders with real testimonials (if added later)
-
-### P1 — Enhancement opportunities
-- Add real company logos to "Built with" section
-- Add second testimonial card in Founder Note section
-- A/B test amber vs teal CTA color for conversion
-- Add analytics tracking (Plausible, Segment, or similar) on CTA clicks
-- SEO meta tags (og:title, og:image, description)
-
-### P2 — Future features
-- Blog section (linked from nav)
-- Pricing page
-- About page with team section
-- Waitlist/email capture integration (Mailchimp, ConvertKit)
-- Cookie consent banner
-
----
-
-## Testing Results
-- **Test Date**: February 2026
-- **Pass Rate**: 97% (19/19 major features confirmed)
-- **Test Report**: `/app/test_reports/iteration_1.json`
+## Backlog
+- **P1**: Implement chosen logo (lighthouse concept - paused by user)
+- **P1**: Connect CTA links to Google Sheet database (user requested unclickable for now)
+- **P2**: Add Loom video embed to Founder Note section
+- **P2**: Add email notification on early-access signup (reference backend has SMTP code)
+- **P3**: Add testimonials section (content needed from user)
+- **P3**: SEO meta tags and Open Graph optimization
