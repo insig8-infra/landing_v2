@@ -5,8 +5,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from typing import List, Optional, Literal
 import uuid
 from datetime import datetime, timezone
 
@@ -37,6 +37,28 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+
+class EarlyAccessSignup(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    email: EmailStr
+    company: Optional[str] = None
+    role: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+class EarlyAccessCreate(BaseModel):
+    email: EmailStr
+    company: Optional[str] = None
+    role: Optional[str] = None
+
+
+class EarlyAccessResponse(BaseModel):
+    success: bool
+    status: Literal["created", "duplicate"]
+    message: str
+
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -65,6 +87,34 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+
+@api_router.post("/early-access", response_model=EarlyAccessResponse)
+async def create_early_access_signup(input: EarlyAccessCreate):
+    existing = await db.early_access.find_one({"email": input.email}, {"_id": 0})
+    if existing:
+        return EarlyAccessResponse(
+            success=True,
+            status="duplicate",
+            message="You're already on our list! We'll be in touch soon."
+        )
+    signup = EarlyAccessSignup(**input.model_dump())
+    doc = signup.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.early_access.insert_one(doc)
+    logger.info(f"New early access signup: {input.email}")
+    return EarlyAccessResponse(
+        success=True,
+        status="created",
+        message="Welcome to the waitlist! We'll reach out soon."
+    )
+
+
+@api_router.get("/early-access/count")
+async def get_early_access_count():
+    count = await db.early_access.count_documents({})
+    return {"count": count}
+
 
 # Include the router in the main app
 app.include_router(api_router)
