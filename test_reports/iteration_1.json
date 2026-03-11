@@ -44,7 +44,7 @@
   "seed_data_creation": "",
   "retest_needed": false,
   "should_main_agent_self_test": false,
-  "context_for_next_testing_agent": "This is a pure frontend landing page at https://lucid-borg-5.preview.emergentagent.com. All sections render correctly. All data-testids are present and comprehensive. Nav blur on scroll works. Mobile hamburger is visible. Stats count-up animation works. Signal card data all present. All 6 outcome cards present. Founder note has video placeholder with play button visible. Footer has Product/Company/Legal columns and LinkedIn/Twitter icons. Copyright shows 2026.",
+  "context_for_next_testing_agent": "This is a pure frontend landing page at https://intel-beacon.preview.emergentagent.com. All sections render correctly. All data-testids are present and comprehensive. Nav blur on scroll works. Mobile hamburger is visible. Stats count-up animation works. Signal card data all present. All 6 outcome cards present. Founder note has video placeholder with play button visible. Footer has Product/Company/Legal columns and LinkedIn/Twitter icons. Copyright shows 2026.",
   "passed_tests": [
     "Navigation logo (infinity mark + insig8 text) in teal",
     "Nav links: Product, Pricing, Sign in, Start free",
