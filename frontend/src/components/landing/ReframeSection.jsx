@@ -6,8 +6,8 @@ import { fadeUpVariant } from './scrollChoreography';
 const ReframeQuote = ({ text }) => {
   const words = text.split(' ');
   return (
-    <blockquote className="relative text-xl sm:text-2xl font-heading font-semibold text-display leading-snug max-w-3xl mx-auto text-center">
-      <span className="absolute -left-4 -top-4 text-6xl text-brand-primary/20 font-serif" aria-hidden="true">"</span>
+    <blockquote className="relative font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-display leading-snug max-w-3xl mx-auto text-center">
+      <span className="absolute -left-2 sm:-left-6 -top-4 text-5xl sm:text-6xl text-brand-primary/15 font-serif select-none" aria-hidden="true">&ldquo;</span>
       {words.map((word, i) => (
         <motion.span
           key={i}
@@ -28,14 +28,14 @@ export const ReframeSection = () => {
   const { lead, body, pullQuote, closer } = LANDING_COPY.reframe;
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="reframe-section">
+    <section className="relative py-12 sm:py-16" data-testid="reframe-section">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <motion.p
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-body-lg text-display font-semibold text-center mb-10"
+          className="font-heading text-xl sm:text-2xl font-bold text-display text-center mb-8"
           data-testid="reframe-lead"
         >
           {lead}
@@ -46,7 +46,7 @@ export const ReframeSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="space-y-4 text-body-md text-support mb-16 text-center"
+          className="space-y-4 text-base text-support mb-12 text-center leading-relaxed"
           data-testid="reframe-body"
         >
           {body.map((para, i) => (
@@ -54,7 +54,7 @@ export const ReframeSection = () => {
           ))}
         </motion.div>
 
-        <div className="py-12 border-y border-white/5 mb-16" data-testid="reframe-pull-quote">
+        <div className="py-10 border-y border-white/5 mb-10" data-testid="reframe-pull-quote">
           <ReframeQuote text={pullQuote} />
         </div>
 
@@ -63,7 +63,7 @@ export const ReframeSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-body-md text-support text-center"
+          className="text-base text-support text-center leading-relaxed"
           data-testid="reframe-closer"
         >
           {closer}

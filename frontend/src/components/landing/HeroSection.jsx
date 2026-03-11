@@ -61,7 +61,7 @@ export const HeroSection = ({ onOpenEarlyAccess }) => {
     <MouseContext.Provider value={mousePos}>
       <section
         ref={sectionRef}
-        className="relative min-h-[200vh] overflow-hidden"
+        className="relative min-h-[140vh] overflow-hidden"
         onMouseMove={handleMouseMove}
         data-testid="hero-section"
         id="hero"

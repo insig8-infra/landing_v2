@@ -13,7 +13,7 @@ const OutcomeCard = ({ card, index }) => (
       <card.icon size={18} className={card.color} />
     </div>
     <h3 className="font-heading font-semibold text-base text-heading mb-2">{card.title}</h3>
-    <p className="text-body-sm text-support leading-relaxed mb-4">{card.body}</p>
+    <p className="text-sm text-support leading-relaxed mb-4">{card.body}</p>
     <div className="flex flex-wrap gap-1.5">
       {card.tags.map((tag) => (
         <span
@@ -32,17 +32,17 @@ export const OutcomesSection = () => {
   const { eyebrow, headline, cards } = LANDING_COPY.outcomes;
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="outcomes-section" id="features">
+    <section className="relative py-12 sm:py-20" data-testid="outcomes-section" id="features">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <span className="text-eyebrow text-amber-400 mb-4 block" data-testid="outcomes-eyebrow">{eyebrow}</span>
-          <h2 className="text-display-section" data-testid="outcomes-headline" id="features-headline">{headline}</h2>
+          <span className="text-eyebrow text-amber-400 mb-3 block" data-testid="outcomes-eyebrow">{eyebrow}</span>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-display" data-testid="outcomes-headline">{headline}</h2>
         </motion.div>
 
         <motion.div

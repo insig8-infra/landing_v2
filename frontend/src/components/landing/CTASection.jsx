@@ -7,15 +7,15 @@ export const CTASection = ({ onOpenEarlyAccess }) => {
   const { headline, headlineAccent, body, buttonText, microcopy } = LANDING_COPY.cta;
 
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden" data-testid="cta-section">
-      <div className="absolute inset-0 hero-glow opacity-50 pointer-events-none" />
+    <section className="relative py-10 sm:py-12 overflow-hidden" data-testid="cta-section">
+      <div className="absolute inset-0 hero-glow opacity-40 pointer-events-none" />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.h2
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-display-section mb-2"
+          className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-display mb-1"
           data-testid="cta-headline"
         >
           {headline}
@@ -25,7 +25,7 @@ export const CTASection = ({ onOpenEarlyAccess }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-display-section gradient-text-highlight mb-6"
+          className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text-highlight mb-5"
           data-testid="cta-headline-accent"
         >
           {headlineAccent}
@@ -35,7 +35,7 @@ export const CTASection = ({ onOpenEarlyAccess }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-body-lg text-support mb-8 max-w-lg mx-auto"
+          className="text-base sm:text-lg text-support mb-8 max-w-lg mx-auto leading-relaxed"
           data-testid="cta-body"
         >
           {body}

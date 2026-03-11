@@ -32,22 +32,17 @@ const StatItem = ({ stat, isActive }) => {
   const numericValue = isRange ? 0 : parseInt(stat.value.replace(/\D/g, ''), 10);
   const hasSuffix = stat.value.includes('+');
   const count = useCounter(numericValue, isActive);
-
   const display = isRange ? stat.value : `${count}${hasSuffix ? '+' : ''}`;
 
   return (
-    <motion.div
-      variants={fadeUpVariant}
-      className="text-center px-4"
-      data-testid={`stat-${stat.id}`}
-    >
-      <div className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold gradient-text-hero mb-1" data-testid={`stat-number-${stat.id}`}>
+    <motion.div variants={fadeUpVariant} className="text-center" data-testid={`stat-${stat.id}`}>
+      <div className="text-4xl sm:text-5xl font-heading font-bold gradient-text-hero mb-1" data-testid={`stat-number-${stat.id}`}>
         {display}
       </div>
       {stat.unit && (
-        <div className="text-sm font-semibold text-support uppercase tracking-wider mb-2">{stat.unit}</div>
+        <div className="text-xs font-semibold text-support uppercase tracking-wider mb-2">{stat.unit}</div>
       )}
-      <p className="text-body-sm text-muted max-w-[200px] mx-auto">{stat.desc}</p>
+      <p className="text-sm text-muted max-w-[200px] mx-auto leading-snug">{stat.desc}</p>
     </motion.div>
   );
 };
@@ -67,18 +62,15 @@ export const StatsSection = () => {
   }, []);
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="stats-section">
+    <section className="relative py-10 sm:py-12" data-testid="stats-section">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.12 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-white/5"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-y border-white/5"
         >
           {LANDING_COPY.stats.map((stat) => (
             <StatItem key={stat.id} stat={stat} isActive={active} />

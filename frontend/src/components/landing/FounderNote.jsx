@@ -10,7 +10,7 @@ export const FounderNote = () => {
   const { eyebrow, headline, body } = LANDING_COPY.founderNote;
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="founder-note-section">
+    <section className="relative pt-8 pb-10 sm:pt-10 sm:pb-12" data-testid="founder-note-section">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           variants={fadeUpVariant}
@@ -18,9 +18,9 @@ export const FounderNote = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="text-eyebrow text-support mb-4 block" data-testid="founder-eyebrow">{eyebrow}</span>
-          <h2 className="text-display-section mb-3" data-testid="founder-headline">{headline}</h2>
-          <p className="text-body-md text-support mb-8" data-testid="founder-body">{body}</p>
+          <span className="text-eyebrow text-support mb-3 block" data-testid="founder-eyebrow">{eyebrow}</span>
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-display mb-3" data-testid="founder-headline">{headline}</h2>
+          <p className="text-base text-support mb-8 leading-relaxed" data-testid="founder-body">{body}</p>
         </motion.div>
 
         <motion.div
@@ -34,7 +34,7 @@ export const FounderNote = () => {
           <img
             src={POSTER}
             alt="Founder video poster"
-            className="w-full h-64 sm:h-80 object-cover opacity-60 group-hover:opacity-70 transition-opacity"
+            className="w-full h-56 sm:h-72 object-cover opacity-60 group-hover:opacity-70 transition-opacity"
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">

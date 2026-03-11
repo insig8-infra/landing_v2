@@ -13,19 +13,19 @@ const PricingCard = ({ plan, onCTA }) => (
     data-testid={`pricing-card-${plan.name.toLowerCase()}`}
   >
     {plan.highlighted && (
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-hero-focus text-xs font-bold text-white">
+      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-hero-focus text-xs font-bold text-white whitespace-nowrap">
         Most Popular
       </div>
     )}
-    <div className="mb-6">
+    <div className="mb-5">
       <h3 className="font-heading font-semibold text-lg text-heading mb-1">{plan.name}</h3>
-      <div className="flex items-baseline gap-1">
+      <div className="flex items-baseline gap-1 mb-2">
         <span className="text-3xl sm:text-4xl font-heading font-bold text-display">{plan.price}</span>
         {plan.period && <span className="text-sm text-muted">{plan.period}</span>}
       </div>
-      <p className="text-body-sm text-support mt-2">{plan.description}</p>
+      <p className="text-sm text-support">{plan.description}</p>
     </div>
-    <ul className="space-y-3 mb-8 flex-1">
+    <ul className="space-y-2.5 mb-6 flex-1">
       {plan.features.map((feature) => (
         <li key={feature} className="flex items-start gap-2 text-sm text-support">
           <Check size={14} className="text-emerald-400 mt-0.5 flex-shrink-0" />
@@ -51,17 +51,17 @@ export const PricingSection = ({ onOpenEarlyAccess }) => {
   const { eyebrow, headline, plans } = LANDING_COPY.pricing;
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="pricing-section" id="pricing">
+    <section className="relative pt-8 pb-12 sm:pt-10 sm:pb-16" data-testid="pricing-section" id="pricing">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <span className="text-eyebrow text-brand-primary mb-4 block" data-testid="pricing-eyebrow">{eyebrow}</span>
-          <h2 className="text-display-section" data-testid="pricing-headline">{headline}</h2>
+          <span className="text-eyebrow text-brand-primary mb-3 block" data-testid="pricing-eyebrow">{eyebrow}</span>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-display" data-testid="pricing-headline">{headline}</h2>
         </motion.div>
 
         <motion.div

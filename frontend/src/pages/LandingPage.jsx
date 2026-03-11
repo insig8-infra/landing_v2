@@ -15,6 +15,12 @@ import { FAQSection } from '../components/landing/FAQSection';
 import { FooterSection } from '../components/landing/FooterSection';
 import { EarlyAccessModal } from '../components/landing/EarlyAccessModal';
 
+const Divider = () => (
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+  </div>
+);
+
 const LandingPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -41,14 +47,20 @@ const LandingPage = () => {
       <main>
         <HeroSection onOpenEarlyAccess={openModal} />
         <IntegrationsMarquee />
+        <Divider />
         <ProblemSection />
         <ReframeSection />
+        <Divider />
         <HowItWorksSection />
+        <Divider />
         <OutcomesSection />
         <StatsSection />
+        <Divider />
         <FounderNote />
         <CTASection onOpenEarlyAccess={openModal} />
+        <Divider />
         <PricingSection onOpenEarlyAccess={openModal} />
+        <Divider />
         <FAQSection />
       </main>
       <FooterSection />

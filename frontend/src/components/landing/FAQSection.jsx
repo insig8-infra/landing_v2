@@ -14,7 +14,7 @@ const FAQItem = ({ item, isOpen, onToggle }) => (
       className="w-full flex items-center justify-between py-5 text-left group"
       aria-expanded={isOpen}
     >
-      <span className="font-heading font-semibold text-base text-heading pr-4 group-hover:text-brand-primary transition-colors">
+      <span className="font-heading font-semibold text-base sm:text-lg text-heading pr-4 group-hover:text-brand-primary transition-colors">
         {item.q}
       </span>
       <ChevronDown
@@ -31,7 +31,7 @@ const FAQItem = ({ item, isOpen, onToggle }) => (
           transition={{ duration: 0.3, ease: 'easeInOut' }}
           className="overflow-hidden"
         >
-          <p className="text-body-sm text-support pb-5 leading-relaxed">{item.a}</p>
+          <p className="text-sm text-support pb-5 leading-relaxed">{item.a}</p>
         </motion.div>
       )}
     </AnimatePresence>
@@ -43,17 +43,17 @@ export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="faq-section" id="faq">
+    <section className="relative py-12 sm:py-16" data-testid="faq-section" id="faq">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <span className="text-eyebrow text-brand-primary mb-4 block" data-testid="faq-eyebrow">{eyebrow}</span>
-          <h2 className="text-display-section" data-testid="faq-headline">{headline}</h2>
+          <span className="text-eyebrow text-brand-primary mb-3 block" data-testid="faq-eyebrow">{eyebrow}</span>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-display" data-testid="faq-headline">{headline}</h2>
         </motion.div>
 
         <motion.div
