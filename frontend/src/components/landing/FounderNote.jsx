@@ -1,10 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 import { LANDING_COPY } from '../../content/landingCopy';
 import { fadeUpVariant } from './scrollChoreography';
-
-const POSTER = 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=640&q=60&auto=format&fit=crop';
 
 export const FounderNote = () => {
   const { eyebrow, headline, body } = LANDING_COPY.founderNote;
@@ -28,22 +25,22 @@ export const FounderNote = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-2xl overflow-hidden group cursor-pointer bento-card"
+          className="relative rounded-2xl overflow-hidden bento-card"
           data-testid="founder-video-placeholder"
+          style={{
+            background: 'radial-gradient(ellipse 60% 50% at 50% 50%, hsl(var(--brand-primary) / 0.05) 0%, transparent 70%)',
+          }}
         >
-          <img
-            src={POSTER}
-            alt="Founder video poster"
-            className="w-full h-56 sm:h-72 object-cover opacity-60 group-hover:opacity-70 transition-opacity"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Play size={24} className="text-white ml-1" fill="currentColor" />
-            </div>
+          <div className="flex flex-col items-center justify-center py-16 sm:py-20">
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.6, 1] }}
+              transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+              className="w-3 h-3 rounded-full bg-rose-500 mb-4"
+              aria-hidden="true"
+            />
+            <span className="text-eyebrow text-support mb-1">Recording coming soon</span>
+            <p className="text-xs text-muted">60 seconds from the founders on why we're building insig8</p>
           </div>
-          <p className="absolute bottom-3 left-0 right-0 text-[10px] text-muted text-center" data-testid="founder-caption">
-            // Loom embed — replace with your recording
-          </p>
         </motion.div>
       </div>
     </section>
